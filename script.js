@@ -1,4 +1,8 @@
 
+let color = "black";
+
+
+
 // this function determines the size of the 
 function determineSize(size){
     let grid = document.querySelector('.grid');
@@ -12,13 +16,35 @@ function determineSize(size){
         
         let square = document.createElement('div');
         
-        square.style.backgroundColor = 'white';
+       
         square.style.borderColor = 'black';
         // function that changes the color of the box when you mouse over the box
-        square.onmouseover=function(){
-            square.style.backgroundColor = "black";
-            
-        }
+        
+        square.addEventListener("mouseover" , colorsquare);
+        square.style.backgroundColor = 'white';
         grid.insertAdjacentElement("beforeend",square);
     }
+}
+
+document.querySelector('.25').click();
+
+
+
+function colorsquare(){
+
+        this.style.backgroundColor = color;
+ 
+   
+}
+
+function changecolor(choice){
+    color = choice;
+}
+
+
+function reset(){
+    let grid = document.querySelector('.grid');
+    let squares = grid.querySelectorAll("div");
+    squares.forEach((div) => div.style.backgroundColor = "white");
+
 }
