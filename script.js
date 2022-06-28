@@ -1,6 +1,8 @@
 
 let color = "black";
 
+window.onload = determineSize(25)
+
 
 
 // this function determines the size of the 
@@ -26,7 +28,7 @@ function determineSize(size){
     }
 }
 
-document.querySelector('.25').click();
+
 
 
 
